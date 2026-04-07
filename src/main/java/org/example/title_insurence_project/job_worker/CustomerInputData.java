@@ -53,5 +53,9 @@ public class CustomerInputData {
             variables.put("targetQueue", "inbox");
 
         }
+        client.newCompleteCommand(job.getKey())
+                .variables(variables)
+                .send()
+                .join();
     }
     }
