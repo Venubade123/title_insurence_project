@@ -38,6 +38,9 @@ public class CustomerInputData {
                 variables.get("Estimated_date")
         };
 
+        System.out.println(params);
+
+
         if ("required".equalsIgnoreCase(priorityType))
         {
             jdbcTemplate.update(
