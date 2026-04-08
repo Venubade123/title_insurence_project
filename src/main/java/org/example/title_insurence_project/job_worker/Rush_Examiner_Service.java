@@ -25,8 +25,8 @@ public class Rush_Examiner_Service {
 
         for( Map<String,Object> record:rushRecords)
         {
-       String  adharNo=(String)record.get("Adhar_Number");
-       List<Map<String,Object>> govRecords=jdbcTemplate.queryForList("SELECT * FROM person_with_property_details where Adhar_Number= ?",adharNo);
+            Long adharNo = ((Number) record.get("Adhar_Number")).longValue();
+            List<Map<String,Object>> govRecords=jdbcTemplate.queryForList("SELECT * FROM person_with_property_details where Adhar_Number= ?",adharNo);
            if(!govRecords.isEmpty())
            {
                Map<String,Object> matchedRecord=govRecords.get(0);
